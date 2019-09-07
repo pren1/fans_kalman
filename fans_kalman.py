@@ -36,8 +36,8 @@ class fans_kalman(object):
 
 	def predict_interface(self, new_measurement):
 		'predict the value, and update the kalman filter'
-		res = np.dot(self.H, self.kf.predict())[0]
 		self.kf.update(new_measurement)
+		res = np.dot(self.H, self.kf.predict())[0]
 		return res
 
 def grid_search_interface(sigma_w, sigma_v, processed_dataframe, origin_data):
