@@ -5,13 +5,14 @@ import numpy as np
 from data_preprosessor import data_preprocessor
 
 class grid_search(object):
+	'perform a grid search'
 	def __init__(self):
-		self.sigma_w_grid = np.linspace(0.0001, 1.0, num=50)
-		self.sigma_v_grid = np.linspace(0.0001, 1.0, num=50)
-
+		self.sigma_w_grid = np.linspace(0.0001, 1.0, num=10)
+		self.sigma_v_grid = np.linspace(0.0001, 3.0, num=30)
+		'read in data once'
 		dp = data_preprocessor()
 		dp.read_in_csv('kizuna.csv')
-		self.processed_dataframe = dp.preprocess()
+		self.processed_dataframe, self.origin_data = dp.preprocess()
 
 	def run_grid_search(self):
 		minimum_error = np.Inf
@@ -19,7 +20,7 @@ class grid_search(object):
 		saved_sigma_v = -1
 		for sigma_w in tqdm.tqdm(self.sigma_w_grid):
 			for sigma_v in tqdm.tqdm(self.sigma_v_grid):
-				val = grid_search_interface(sigma_w=sigma_w, sigma_v=sigma_v, processed_dataframe=self.processed_dataframe)
+				val = grid_search_interface(sigma_w=sigma_w, sigma_v=sigma_v, processed_dataframe=self.processed_dataframe, origin_data = self.origin_data)
 				if minimum_error > val:
 					minimum_error = val
 					saved_sigma_w = sigma_w

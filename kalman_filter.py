@@ -1,4 +1,5 @@
 import numpy as np
+'code inherited from https://github.com/zziz/kalman-filter.git, remain unchanged'
 
 class KalmanFilter(object):
     def __init__(self, F = None, B = None, H = None, Q = None, R = None, P = None, x0 = None):

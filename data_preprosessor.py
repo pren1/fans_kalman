@@ -1,15 +1,15 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import pdb
 
 class data_preprocessor(object):
 	def __init__(self):
-		'time interpolation interval: 10min = 10*60*1000ms'
-		self.time_interpolation_interval = 10*60*1000
+		'time interpolation interval: 5min = 5*60*1000ms'
+		self.time_interpolation_interval = 5*60*1000
 
 	def read_in_csv(self, file_name):
 		# Read data from file 'filename.csv'
 		# (in the same directory that your python process is based)
-		# Control delimiters, rows, column names with read_csv (see later)
 		self.data = pd.read_csv(file_name, header=None)
 		# Preview the first 5 lines of the loaded data
 		print(f"read in data: {self.data.head()}")
@@ -23,7 +23,8 @@ class data_preprocessor(object):
 		time_line /= self.time_interpolation_interval
 		'change type to int, we need integer here'
 		time_line = time_line.astype(int)
-
+		'build the origin data frame for evaluate'
+		origin_dataframe = pd.DataFrame(zip(time_line, follower_line), columns=['time', 'follower'])
 		res_time_line = []
 		res_follower_line = []
 		current_follower = 0
@@ -39,9 +40,10 @@ class data_preprocessor(object):
 		'Done!, build a new dataframe here, and show the data'
 		df = pd.DataFrame(list(zip(res_time_line, res_follower_line)),
 		                  columns=['time', 'follower'])
-		df.plot(x='time', y='follower')
+		# df.plot(x='time', y='follower')
+		# plt.title('origin data')
 		# plt.show()
-		return df
+		return df, origin_dataframe
 
 if __name__ == '__main__':
 	'read in csv'
