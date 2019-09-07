@@ -3,7 +3,7 @@ To predict the fans of any vtuber
 
 The Kalman impl is inherited and modified from [here](https://github.com/zziz/kalman-filter.git): 
 
-We expect that there is an update of the follower number every 5 minutes. If there isn't, the follower number will remain unchanged, and it will be used as an input. 
+We expect that there is an update of the follower number every 5 minutes. If there isn't, the follower number should remain unchanged, and it should be used as an input. 
 
 Run:
 
