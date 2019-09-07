@@ -1,4 +1,3 @@
-import pdb
 from fans_kalman import grid_search_interface
 import tqdm
 import numpy as np
@@ -10,7 +9,7 @@ class grid_search(object):
 		self.sigma_w_grid = np.linspace(0.0001, 1.0, num=10)
 		self.sigma_v_grid = np.linspace(0.0001, 1.0, num=10)
 		dp = data_preprocessor()
-		dp.read_in_csv('mea.csv')
+		dp.read_in_csv('kizuna.csv')
 		self.origin_data = dp.preprocess()
 
 	def run_grid_search(self):
