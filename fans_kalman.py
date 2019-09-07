@@ -52,10 +52,13 @@ if __name__ == '__main__':
 	for data in input_data:
 		pred_res.append(kalman_filter.predict_interface(data))
 
+	'simply turn the pred_res to an array'
+	prediction_array = np.squeeze(np.asarray(pred_res))
+	mean_diff = np.mean(np.abs(input_data - prediction_array))
 	'also, calculate the l2 distance'
-	plt.plot(np.asarray(input_data), c='r', label='Follower Measurements')
-	plt.plot(np.asarray(pred_res), c='c', label='Kalman Filter Prediction')
+	plt.plot(input_data, c='r', label='Follower Measurements')
+	plt.plot(prediction_array, c='c', label='Kalman Filter Prediction')
 	plt.legend()
-	# plt.title(f'mean_dist: {mean_dist}')
+	plt.title(f'mean_dist: {mean_diff}')
 	plt.show()
 
