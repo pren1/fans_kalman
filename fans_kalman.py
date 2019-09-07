@@ -60,8 +60,8 @@ if __name__ == '__main__':
 	pred_res = []
 	input_data = processed_dataframe['follower']
 
-	optimal_sigma_w = 0.2223
-	optimal_sigma_v = 0.8889
+	optimal_sigma_w = 0.16334897959183672
+	optimal_sigma_v = 0.7347204081632653
 	kalman_filter = fans_kalman(input_data[0], sigma_w=optimal_sigma_w, sigma_v=optimal_sigma_v)
 
 	for data in input_data:
