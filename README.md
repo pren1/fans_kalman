@@ -36,7 +36,7 @@ Though the current performance is ok even if these two parameters are randomly c
 
 ## Results
 
-The model is 'trained' on the data from Kizuna ai, and it is tested on the data from mea. Here are the results:
+The model is 'trained' on the data from [Kizuna ai](https://vtbs.moe/detail/1473830), and it is tested on the data from [mea](https://vtbs.moe/detail/349991143). Here are the results:
 
 Mean prediction error on the training set (kizuna.csv):
 
