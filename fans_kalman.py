@@ -53,7 +53,7 @@ if __name__ == '__main__':
 		pred_res.append(kalman_filter.predict_interface(data))
 
 	'also, calculate the l2 distance'
-	plt.plot(np.asarray(input_data), c='r', label='follower Measurements')
+	plt.plot(np.asarray(input_data), c='r', label='Follower Measurements')
 	plt.plot(np.asarray(pred_res), c='c', label='Kalman Filter Prediction')
 	plt.legend()
 	# plt.title(f'mean_dist: {mean_dist}')
