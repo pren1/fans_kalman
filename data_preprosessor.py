@@ -40,7 +40,7 @@ class data_preprocessor(object):
 		df = pd.DataFrame(list(zip(res_time_line, res_follower_line)),
 		                  columns=['time', 'follower'])
 		df.plot(x='time', y='follower')
-		plt.show()
+		# plt.show()
 		return df
 
 if __name__ == '__main__':

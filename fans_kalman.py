@@ -12,7 +12,7 @@ class fans_kalman(object):
 	def define_kalman_parameters(self, initial_x0):
 		dt = 1
 		sigma_w = 0.05
-		sigma_v = 0.05
+		sigma_v = 0.45
 
 		self.F = np.array([[1, dt],
 		                   [0, 1]])
@@ -24,8 +24,8 @@ class fans_kalman(object):
 
 		self.R = np.array([sigma_v*sigma_v]).reshape(1, 1)
 
-		self.P = np.array([[100., 0],
-							[0, 100.]])
+		self.P = np.array([[10., 0],
+							[0, 10.]])
 
 		'Notice that, the inital_x0 here actually is a state, which is a 2-d array'
 		self.initial_x0 = np.array([[initial_x0],
