@@ -32,7 +32,7 @@ to find the two optimized parameters:
   1. sigma_w: The variance of the process noise
   2. sigma_v: The variance of the measurement noise
 
-Though the current performance is ok even if these two parameters are randomly chosen.
+Nevertheless, the current performance is ok even if these two parameters are randomly chosen.
 
 ## Results
 
