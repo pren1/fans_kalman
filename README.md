@@ -18,8 +18,8 @@ Run:
 python3 grid_search.py
 ```
 to find the two optimized parameters: 
-  1. sigma_w: variance of the process noise
-  2. sigma_v: variance of the measurement noise
+  1. sigma_w: The variance of the process noise
+  2. sigma_v: The variance of the measurement noise
 
 The grid search has been done, and the optimized parameter has been found. The model is trained on the data from Kizuna ai, 
 and it is tested on the data from mea. Here are the results:
