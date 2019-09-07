@@ -27,13 +27,13 @@ and it is tested on the data from mea. Here are the result:
 Mean prediction error on the training set (kizuna.csv):
 
 <p>
-    <img src="model_picture/kizuna.png"/>
+    <img src="kizuna.png"/>
 </p>
 
 Mean prediction error on the test set (mea.csv):
 
 <p>
-    <img src="model_picture/mea.png"/>
+    <img src="mea.png"/>
 </p>
 
 For more details, please take a look at my code :D
