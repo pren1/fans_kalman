@@ -9,9 +9,7 @@
 [![Generic badge](https://img.shields.io/badge/tqdm-<COLOR>.svg)](https://shields.io/)
 [![Generic badge](https://img.shields.io/badge/matplotlib-<COLOR>.svg)](https://shields.io/)
 
-To predict the fans of any vtuber
-
-The Kalman impl is inherited and modified from [here](https://github.com/zziz/kalman-filter.git): 
+A kalman filter is utilized to predict the fans of any vtuber. The Kalman impl is inherited and modified from [here](https://github.com/zziz/kalman-filter.git): 
 
 We expect that there is an update of the follower number every 5 minutes. If there isn't, then the kalman filter will only perform the time-update. The measurement-update will not be performed.
 
