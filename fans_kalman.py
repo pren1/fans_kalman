@@ -11,13 +11,24 @@ class fans_kalman(object):
 
 	def define_kalman_parameters(self):
 		dt = 1
-		self.F = np.array([[1, dt, 0], [0, 1, dt], [0, 0, 1]])
-		self.H = np.array([1, 0, 0]).reshape(1, 3)
-		self.Q = np.array([[0.05, 0.05, 0.0], [0.05, 0.05, 0.0], [0.0, 0.0, 0.0]])
-		self.R = np.array([0.5]).reshape(1, 1)
+		sigma_w = 0.05
+		sigma_v = 0.05
+
+		self.F = np.array([[1, dt],
+		                   [0, 1]])
+
+		self.H = np.array([1, 0]).reshape(1, 2)
+
+		self.Q = np.array([[sigma_w, 0.0],
+		                   [0.0, sigma_w]])
+
+		self.R = np.array([sigma_v*sigma_v]).reshape(1, 1)
+
+		self.P = np.array([[100., 0],
+							[0, 100.]])
 
 	def define_kalman_filter(self):
-		self.kf = KalmanFilter(F=self.F, H=self.H, Q=self.Q, R=self.R)
+		self.kf = KalmanFilter(F=self.F, H=self.H, Q=self.Q, R=self.R, P=self.P)
 
 	def predict_interface(self, new_measurement):
 		res = np.dot(self.H, self.kf.predict())[0]
@@ -34,7 +45,7 @@ if __name__ == '__main__':
 	input_data = processed_dataframe['follower']
 	for data in input_data:
 		pred_res.append(kalman_filter.predict_interface(data))
-	plt.plot(np.asarray(input_data)[1000:], c='r', label='follower Measurements')
-	plt.plot(np.asarray(pred_res)[1000:], c='c', label='Kalman Filter Prediction')
+	plt.plot(np.asarray(input_data), c='r', label='follower Measurements')
+	plt.plot(np.asarray(pred_res), c='c', label='Kalman Filter Prediction')
 	plt.legend()
 	plt.show()
