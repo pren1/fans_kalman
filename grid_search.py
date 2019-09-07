@@ -9,7 +9,6 @@ class grid_search(object):
 	def __init__(self):
 		self.sigma_w_grid = np.linspace(0.0001, 1.0, num=10)
 		self.sigma_v_grid = np.linspace(0.0001, 3.0, num=30)
-		'read in data once'
 		dp = data_preprocessor()
 		dp.read_in_csv('kizuna.csv')
 		self.processed_dataframe, self.origin_data = dp.preprocess()

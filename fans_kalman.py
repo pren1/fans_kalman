@@ -65,8 +65,8 @@ def grid_search_interface(sigma_w, sigma_v, processed_dataframe, origin_data):
 
 if __name__ == '__main__':
 	dp = data_preprocessor()
-	# dp.read_in_csv('kizuna.csv')
-	dp.read_in_csv('mea.csv')
+	dp.read_in_csv('kizuna.csv')
+	# dp.read_in_csv('mea.csv')
 	processed_dataframe, origin_data = dp.preprocess()
 
 	pred_res = []
@@ -99,5 +99,5 @@ if __name__ == '__main__':
 	plt.plot(prediction_array, c='c', label='Kalman Filter Prediction')
 	plt.legend()
 	plt.xlabel('time')
-	plt.title(f'mean_dist: {mean_diff}')
+	plt.title(f'mean prediction error: {mean_diff}')
 	plt.show()
