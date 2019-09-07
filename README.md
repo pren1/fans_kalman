@@ -11,7 +11,7 @@
 
 **A kalman filter is utilized to predict the fans of any vtuber.** The Kalman impl is inherited and modified from [here](https://github.com/zziz/kalman-filter.git): 
 
-We expect that there is an update of the follower number every 5 minutes. If there isn't, then the kalman filter will only perform the time-update. The measurement-update will not be performed.
+We expect that there is an update of the follower number every 5 minutes. If there isn't, then the kalman filter will only perform the time-update, while the measurement-update will not be performed.
 
 Run:
 
