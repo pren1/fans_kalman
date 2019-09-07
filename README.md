@@ -1,5 +1,8 @@
 # Fans_Kalman
-[![Generic badge](https://img.shields.io/badge/github-dd_center-<COLOR>.svg)](https://shields.io/)
+
+<p>
+    <img src="image/dd_center.png"/>
+</p>
 
 ## 📁 Dependencies
 
