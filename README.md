@@ -1,7 +1,7 @@
 # Fans_Kalman
 [![Generic badge](https://img.shields.io/badge/github-dd_center-<COLOR>.svg)](https://shields.io/)
 
-## Dependencies
+## 📁 Dependencies
 
 [![Generic badge](https://img.shields.io/badge/python3-<COLOR>.svg)](https://shields.io/)
 [![Generic badge](https://img.shields.io/badge/pandas-<COLOR>.svg)](https://shields.io/)
@@ -9,13 +9,13 @@
 [![Generic badge](https://img.shields.io/badge/tqdm-<COLOR>.svg)](https://shields.io/)
 [![Generic badge](https://img.shields.io/badge/matplotlib-<COLOR>.svg)](https://shields.io/)
 
-## Introduction
+## ☁️ Introduction
 
 **A Kalman filter is utilized to predict the fans of any vtuber.** The Kalman impl is inherited and modified from [here](https://github.com/zziz/kalman-filter.git): 
 
 We expect that there is an update of the follower number every 5 minutes. If there isn't, then the Kalman filter will only perform the time-update, while the measurement-update will not be performed.
 
-## Quickstart
+## ⚡️ Quickstart
 Run:
 
 ```
@@ -34,7 +34,7 @@ to find the two optimized parameters:
 
 Nevertheless, the current performance is ok even if these two parameters are randomly chosen.
 
-## Results
+## 🎉 Results
 
 The model is 'trained' on the data from [Kizuna ai](https://vtbs.moe/detail/1473830), and it is tested on the data from [mea](https://vtbs.moe/detail/349991143). Here are the results:
 
@@ -50,7 +50,7 @@ Mean prediction error on the test set (mea.csv):
     <img src="image/mea.png"/>
 </p>
 
-## Usage example
+## 🚧 Usage example
 
 First, create a kalman filter with your favorite parameters. Note that input_data[0] is the initial value of the follower number:
 ```
@@ -66,4 +66,4 @@ Otherwise, run:
 ```
 new_prediction = kalman_filter.predict_interface(None)
 ```
-The model will not be updated by the measurement, and it will still predict the follower number of the next time step (next 5 minutes).
+The model will not be updated by any measurement, but it will still predict the follower number of the next time step (next 5 minutes).
