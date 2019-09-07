@@ -1,4 +1,14 @@
 # Fans_Kalman
+[![Generic badge](https://img.shields.io/badge/github-dd_center-<COLOR>.svg)](https://shields.io/)
+
+### Dependencies:
+
+[![Generic badge](https://img.shields.io/badge/python3-<COLOR>.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/pandas-<COLOR>.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/numpy-<COLOR>.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/tqdm-<COLOR>.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/matplotlib-<COLOR>.svg)](https://shields.io/)
+
 To predict the fans of any vtuber
 
 The Kalman impl is inherited and modified from [here](https://github.com/zziz/kalman-filter.git): 
