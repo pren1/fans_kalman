@@ -6,16 +6,20 @@ sigma_v = 0.2223
 
 kalman_filter = None
 lastNum = None
-
 for line in sys.stdin:
-  try:
-    num = int(line)
-  except Exception:
-    if lastNum != None:
-      print(lastNum, flush=True)
-      lastNum = kalman_filter.predict_interface(None)[0]
-  else:
-    if kalman_filter == None:
-      kalman_filter = fans_kalman(num, sigma_w=sigma_w, sigma_v=sigma_v)
+    try:
+        num = int(line)
+    except Exception:
+        'None data'
+        if lastNum != None:
+            'predict with None input'
+            print(lastNum, flush=True)
+            lastNum = kalman_filter.predict_interface(None)[0]
     else:
-      lastNum = kalman_filter.predict_interface(num)[0]
+        'Has data'
+        if kalman_filter == None:
+            'create kalman filter'
+            kalman_filter = fans_kalman(num, sigma_w=sigma_w, sigma_v=sigma_v)
+        else:
+            'predict with input'
+            lastNum = kalman_filter.predict_interface(num)[0]
