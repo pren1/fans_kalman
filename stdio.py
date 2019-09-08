@@ -16,4 +16,4 @@ for line in sys.stdin:
     if kalman_filter == None:
       kalman_filter = fans_kalman(num, sigma_w=sigma_w, sigma_v=sigma_v)
     else:
-      kalman_filter.predict_interface(num)
+      print(kalman_filter.predict_interface(num)[0])
